@@ -16,9 +16,9 @@
 		<tbody>
 			<% @deals.each do |d| %>
 				<tr>
-					<td><%= link_to d.name, url: "/deals/#{d.id}" %></td>
+					<td><%= link_to d.name, "/deals/#{d.id}" %></td>
 					<td><%= d.city %>, <%= d.state %></td>
-					<td><%= d.coc_return %></td>
+					<td><%= d.coc_return %>x</td>
 				</tr>
 			<% end %>
 		</tbody>
