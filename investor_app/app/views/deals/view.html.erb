@@ -1,0 +1,29 @@
+<h1>Deal Book</h1><br>
+
+<% if @deals.blank? %>
+	<p>
+		No deals in book.
+	</p>
+<% else %>
+	<table>
+		<thead>
+			<tr>
+				<td>Company Name</td>
+				<td>Location</td>
+				<td>CoC Returns</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @deals.each do |d| %>
+				<tr>
+					<td><%= link_to d.name, url: "/deals/#{d.id}" %></td>
+					<td><%= d.city %>, <%= d.state %></td>
+					<td><%= d.coc_return %></td>
+				</tr>
+			<% end %>
+		</tbody>
+
+	</table>
+<% end %>
+<%= button_to "New Deal", new_deal_path, method: :get, class: "btn btn-primary" %>
+<%= button_to "HOME", root_path, method: :get, class: "btn btn-primary" %>

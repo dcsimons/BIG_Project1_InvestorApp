@@ -1,0 +1,122 @@
+# == Schema Information
+#
+# Table name: deals
+#
+#  id                     :integer          not null, primary key
+#  name                   :string(255)
+#  city                   :string(255)
+#  state                  :string(255)
+#  round_type             :string(255)
+#  entry_year             :integer
+#  entry_revenue          :float
+#  entry_gp               :float
+#  entry_gm               :float
+#  entry_EBITDA           :float
+#  entry_EBITDA_margin    :float
+#  entry_capex            :float
+#  entry_fcf              :float
+#  leverage_multiple      :float
+#  leverage_amount        :float
+#  equity_multiple        :float
+#  equity_amount          :float
+#  purchase_multiple      :float
+#  purchase_price         :float
+#  exit_year              :integer
+#  exit_revenue           :float
+#  exit_gp                :float
+#  exit_gm                :float
+#  exit_EBITDA            :float
+#  exit_EBITDA_margin     :float
+#  exit_capex             :float
+#  exit_fcf               :float
+#  exit_multiple          :float
+#  exit_price             :float
+#  debt_paydown_multiple  :float
+#  debt_paydown_amount    :float
+#  exit_debt_paydown      :float
+#  exit_proceeds          :float
+#  coc_return             :float
+#  irr                    :float
+#  entry_mult_sensitivity :float
+#  exit_mult_sensitivity  :float
+#  created_at             :datetime
+#  updated_at             :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  city: MyString
+  state: MyString
+  round_type: MyString
+  entry_year: 1
+  entry_revenue: 1.5
+  entry_gp: 1.5
+  entry_gm: 1.5
+  entry_EBITDA: 1.5
+  entry_EBITDA_margin: 1.5
+  entry_capex: 1.5
+  entry_fcf: 1.5
+  leverage_multiple: 1.5
+  leverage_amount: 1.5
+  equity_multiple: 1.5
+  equity_amount: 1.5
+  purchase_multiple: 1.5
+  purchase_price: 1.5
+  exit_year: 1
+  exit_revenue: 1.5
+  exit_gp: 1.5
+  exit_gm: 1.5
+  exit_EBITDA: 1.5
+  exit_EBITDA_margin: 1.5
+  exit_capex: 1.5
+  exit_fcf: 1.5
+  exit_multiple: 1.5
+  exit_price: 1.5
+  debt_paydown_multiple: 1.5
+  debt_paydown_amount: 1.5
+  exit_debt_paydown: 1.5
+  exit_proceeds: 1.5
+  coc_return: 1.5
+  irr: 1.5
+  entry_mult_sensitivity: 1.5
+  exit_mult_sensitivity: 1.5
+
+two:
+  name: MyString
+  city: MyString
+  state: MyString
+  round_type: MyString
+  entry_year: 1
+  entry_revenue: 1.5
+  entry_gp: 1.5
+  entry_gm: 1.5
+  entry_EBITDA: 1.5
+  entry_EBITDA_margin: 1.5
+  entry_capex: 1.5
+  entry_fcf: 1.5
+  leverage_multiple: 1.5
+  leverage_amount: 1.5
+  equity_multiple: 1.5
+  equity_amount: 1.5
+  purchase_multiple: 1.5
+  purchase_price: 1.5
+  exit_year: 1
+  exit_revenue: 1.5
+  exit_gp: 1.5
+  exit_gm: 1.5
+  exit_EBITDA: 1.5
+  exit_EBITDA_margin: 1.5
+  exit_capex: 1.5
+  exit_fcf: 1.5
+  exit_multiple: 1.5
+  exit_price: 1.5
+  debt_paydown_multiple: 1.5
+  debt_paydown_amount: 1.5
+  exit_debt_paydown: 1.5
+  exit_proceeds: 1.5
+  coc_return: 1.5
+  irr: 1.5
+  entry_mult_sensitivity: 1.5
+  exit_mult_sensitivity: 1.5

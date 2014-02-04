@@ -1,0 +1,36 @@
+<h1>Edit Deal: <%= @deal.name %></h1>
+<br>
+
+<%= form_for :deal, url: "/deals/#{@deal.id}", method: :patch do |f| %>
+	<%= f.label "Company Name: " %>
+	<%= f.text_field :name, placeholder: "Enter Name", value: @deal.name %></br>
+	<%= f.label "City: " %>
+	<%= f.text_field :city, placeholder: "Enter City", value: @deal.city %></br>
+	<%= f.label "State: " %>
+	<%= f.text_field :state, placeholder: "Two Letter State Abbreviation", value: @deal.state %></br>
+	<%= f.label "Round $ in: " %>
+	<%= f.text_field :round_type, placeholder: "ex: millions", value: @deal.round_type %></br>
+	<%= f.label "Entry Year: " %>
+	<%= f.text_field :entry_year, placeholder: "YYYY", value: @deal.entry_year %></br>
+	<%= f.label "Entry Revenue: " %>
+	<%= f.text_field :entry_revenue, placeholder: "Enter Amount", value: @deal.entry_revenue %></br>
+	<%= f.label "Entry EBITDA: " %>
+	<%= f.text_field :entry_EBITDA, placeholder: "Enter Amount", value: @deal.entry_EBITDA %></br>
+	<%= f.label "Purchase Multiple: " %>
+	<%= f.text_field :purchase_multiple, placeholder: "Enter Multiple", value: @deal.purchase_multiple %></br>
+	<%= f.label "Leverage Multiple: " %>
+	<%= f.text_field :leverage_multiple, placeholder: "Enter Multiple", value: @deal.leverage_multiple %></br>
+	<%= f.label "Exit Year: " %>
+	<%= f.text_field :exit_year, placeholder: "YYYY", value: @deal.exit_year %></br>
+	<%= f.label "Exit Revenue: " %>
+	<%= f.text_field :exit_revenue, placeholder: "Enter Amount", value: @deal.exit_revenue %></br>
+	<%= f.label "Exit EBITDA: " %>
+	<%= f.text_field :exit_EBITDA, placeholder: "Enter Amount", value: @deal.exit_EBITDA %></br>
+	<%= f.label "Exit Multiple: " %>
+	<%= f.text_field :exit_multiple, placeholder: "Enter Multiple", value: @deal.exit_multiple %></br>
+	<%= f.label "Debt Multiple Paid Down During Hold Period: " %>
+	<%= f.text_field :debt_paydown_multiple, placeholder: "Enter Multiple", value: @deal.debt_paydown_multiple %></br>
+
+	<%= f.submit "Update Deal", class: "btn btn-primary" %>
+<% end %>
+<%= button_to "Cancel Update", deal_path(@deal), method: :get, class: "btn btn-warning" %>

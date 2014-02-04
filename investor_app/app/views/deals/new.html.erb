@@ -1,0 +1,22 @@
+<h1>New Deal</h1>
+<br>
+
+<%= form_for :deal, url: "/deals" do |f| %>
+	<%= f.label "Company Name: " %><%= f.text_field :name, placeholder: "Enter Name" %></br>
+	<%= f.label "City: " %><%= f.text_field :city, placeholder: "Enter City" %></br>
+	<%= f.label "State: " %><%= f.text_field :state, placeholder: "Two Letter State Abbreviation" %></br>
+	<%= f.label "Round $ in: " %><%= f.text_field :round_type, placeholder: "ex: millions" %></br>
+	<%= f.label "Entry Year: " %><%= f.text_field :entry_year, placeholder: "YYYY" %></br>
+	<%= f.label "Entry Revenue: " %><%= f.text_field :entry_revenue, placeholder: "Enter Amount" %></br>
+	<%= f.label "Entry EBITDA: " %><%= f.text_field :entry_EBITDA, placeholder: "Enter Amount" %></br>
+	<%= f.label "Purchase Multiple: " %><%= f.text_field :purchase_multiple, placeholder: "Enter Multiple" %></br>
+	<%= f.label "Leverage Multiple: " %><%= f.text_field :leverage_multiple, placeholder: "Enter Multiple" %></br>
+	<%= f.label "Exit Year: " %><%= f.text_field :exit_year, placeholder: "YYYY" %></br>
+	<%= f.label "Exit Revenue: " %><%= f.text_field :exit_revenue, placeholder: "Enter Amount" %></br>
+	<%= f.label "Exit EBITDA: " %><%= f.text_field :exit_EBITDA, placeholder: "Enter Amount" %></br>
+	<%= f.label "Exit Multiple: " %><%= f.text_field :exit_multiple, placeholder: "Enter Multiple" %></br>
+	<%= f.label "Debt Multiple Paid Down During Hold Period: " %><%= f.text_field :debt_paydown_multiple, placeholder: "Enter Multiple" %></br>
+
+	<%= f.submit "Save Deal", class: "btn btn-primary" %>
+<% end %>
+<%= button_to "Cancel Entry", deals_path, method: :get, class: "btn btn-primary" %>
