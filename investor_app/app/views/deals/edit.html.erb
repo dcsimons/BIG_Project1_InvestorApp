@@ -14,8 +14,12 @@
 	<%= f.text_field :entry_year, placeholder: "YYYY", value: @deal.entry_year %></br>
 	<%= f.label "Entry Revenue: " %>
 	<%= f.text_field :entry_revenue, placeholder: "Enter Amount", value: @deal.entry_revenue %></br>
+	<%= f.label "Entry Gross Profit: " %>
+	<%= f.text_field :entry_gp, placeholder: "Enter Amount", value: @deal.entry_gp %></br>
 	<%= f.label "Entry EBITDA: " %>
 	<%= f.text_field :entry_EBITDA, placeholder: "Enter Amount", value: @deal.entry_EBITDA %></br>
+	<%= f.label "Entry Capex: " %>
+	<%= f.text_field :entry_capex, placeholder: "Enter Amount", value: @deal.entry_capex %></br>
 	<%= f.label "Purchase Multiple: " %>
 	<%= f.text_field :purchase_multiple, placeholder: "Enter Multiple", value: @deal.purchase_multiple %></br>
 	<%= f.label "Leverage Multiple: " %>
@@ -24,8 +28,12 @@
 	<%= f.text_field :exit_year, placeholder: "YYYY", value: @deal.exit_year %></br>
 	<%= f.label "Exit Revenue: " %>
 	<%= f.text_field :exit_revenue, placeholder: "Enter Amount", value: @deal.exit_revenue %></br>
+	<%= f.label "Exit Gross Profit: " %>
+	<%= f.text_field :exit_gp, placeholder: "Enter Amount", value: @deal.exit_gp %></br>
 	<%= f.label "Exit EBITDA: " %>
 	<%= f.text_field :exit_EBITDA, placeholder: "Enter Amount", value: @deal.exit_EBITDA %></br>
+	<%= f.label "Exit Capex: " %>
+	<%= f.text_field :exit_capex, placeholder: "Enter Amount", value: @deal.exit_capex %></br>
 	<%= f.label "Exit Multiple: " %>
 	<%= f.text_field :exit_multiple, placeholder: "Enter Multiple", value: @deal.exit_multiple %></br>
 	<%= f.label "Debt Multiple Paid Down During Hold Period: " %>
