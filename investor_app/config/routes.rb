@@ -1,5 +1,6 @@
 InvestorApp::Application.routes.draw do
 
+  devise_for :users
   root to: "deals#index"
 
   get "/deals", to: "deals#view", as: "deals"

@@ -2,6 +2,17 @@
 <br>
 
 <%= form_for :deal, url: "/deals/#{@deal.id}", method: :patch do |f| %>
+	<% unless @deal.errors.count == 0   %>
+    <div>
+      The form contains <%= pluralize(@deal.errors.count, "error") %>.
+    </div>
+    <ul>
+      <% @deal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
 	<%= f.label "Company Name: " %>
 	<%= f.text_field :name, placeholder: "Enter Name", value: @deal.name %></br>
 	<%= f.label "City: " %>

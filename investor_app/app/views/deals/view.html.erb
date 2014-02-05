@@ -1,3 +1,9 @@
+<% if !flash[:error].nil? %>
+	<div><%= flash[:error] %></div>
+<% end %>
+
+<%= button_to "New Deal", new_deal_path, method: :get, class: "btn btn-success" %>
+
 <h1>Deal Book</h1><br>
 
 <% if @deals.blank? %>
@@ -18,12 +24,10 @@
 				<tr>
 					<td><%= link_to d.name, "/deals/#{d.id}" %></td>
 					<td><%= d.city %>, <%= d.state %></td>
-					<td><%= d.coc_return %>x</td>
+					<td><%= d.coc_return.round(1) %>x</td>
 				</tr>
 			<% end %>
 		</tbody>
 
 	</table>
 <% end %>
-<%= button_to "New Deal", new_deal_path, method: :get, class: "btn btn-primary" %>
-<%= button_to "HOME", root_path, method: :get, class: "btn btn-primary" %>
