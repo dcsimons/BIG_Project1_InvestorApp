@@ -9,3 +9,77 @@ body {
   background-position: center;
   background-color: black;*/
 }
+
+.border {
+	border: 2px solid gray;
+	border-radius: 2px;
+}
+
+.home-contain {
+	width: 900px;
+}
+
+.title-contain {
+	float: left;
+	width: 425px;
+}
+
+.entry-contain {
+	float: right;
+	width: 425px;
+}
+
+.home-signin {
+	float: right;
+	text-align: center;
+	width: 400px;
+	border: 2px solid gray;
+	border-radius: 5px;
+	margin: 10px;
+}
+
+.home-signup {
+	float: right;
+	text-align: center;
+	width: 400px;
+	border: 2px solid gray;
+	border-radius: 5px;
+	margin: 10px;
+}
+
+.input-field {
+	display: inline-block;
+	width: 380px;
+	height: 35px;
+	padding: 8px;
+	margin: 5px;
+	border: 1px solid gray;
+	border-radius: 3px;
+	font-size: 20px;
+}
+
+.signin-password {
+	display: inline-block;
+	width: 260px;
+	height: 38px;
+	padding: 8px;
+	margin: 5px;
+	border: 1px solid gray;
+	border-radius: 3px;
+	font-size: 20px;
+}
+
+.signin-btn {
+	display: inline-block;
+	width: 106px;
+	margin: 3px;
+	font-size: 18px;
+}
+
+.signup-btn {
+	font-size: 18px;
+}
+
+.remember {
+	margin-left: 5px;
+}

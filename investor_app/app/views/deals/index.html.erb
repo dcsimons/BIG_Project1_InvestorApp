@@ -1,1 +1,45 @@
-<h1>Welcome to The Deal<h1>
+<div class="container home-contain border">
+	<div class="title-contain">
+		<h1>LBO: The App</h1>
+	</div>
+
+	<div class="entry-contain">
+
+		<div class="home-signin">
+			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+			  	<%= f.email_field :email, :autofocus => true, placeholder: "Email", class: "input-field" %>
+
+			  <%= f.password_field :password, placeholder: "Password", class: "signin-password" %>
+
+			  <%= f.submit "Sign In", class: "btn btn-primary signin-btn" %>
+
+			  <div>
+				  <% if devise_mapping.rememberable? -%>
+				   	<%= f.check_box :remember_me, class: "remember" %> <%= f.label :remember_me %> - 
+				  <% end -%>
+
+				  <%= link_to "Forgot password?", "/users/password/new" %>
+				</div>
+		  
+			<% end %>
+		</div>
+
+		<div class="home-signup">
+				<h3>New to LBO: The App? Sign Up</h3>
+
+			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+			  <%= devise_error_messages! %>
+
+				  	<%= f.email_field :email, placeholder: "Email", class: "input-field" %>
+				  	<%= f.password_field :password, placeholder: "Password", class: "input-field" %>
+				  	<%= f.password_field :password_confirmation, placeholder: "Re-type Password", class: "input-field" %>
+
+			  <div class="modal-footer">
+			  	<%= f.submit "Sign up for LBO: The App", class: "btn btn-success signup-btn" %>
+			  </div>
+			<% end %>
+		</div>
+
+	</div>
+</div>
+	
