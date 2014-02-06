@@ -20,7 +20,7 @@ class DealsController < ApplicationController
 			@deal.calc_remaining_fields
 			@deal.save
 			current_user.deals << @deal
-			redirect_to deal_path(@deal)
+			redirect_to deals_path
 		else
 			render :new
 		end
@@ -32,7 +32,8 @@ class DealsController < ApplicationController
 	end
 
 	def view
-		@deals = current_user.deals
+		@deals = current_user.deals.order(coc_return: :desc)
+		@deal = Deal.new()
 		render :view
 	end
 

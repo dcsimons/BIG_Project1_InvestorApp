@@ -1,20 +1,13 @@
-<div class="container new-contain border">
-				<h3 class="h3-view">Edit Deal: <%= @deal.name %></h3>
-
+<!-- modal for EDIT DEAL in /deals/:id -->
+<div id="editDealModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="editDealModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="editDealModalLabel" class="h3-view">Edit Deal: <%= @deal.name %></h3>
+		  </div>
+		  <div class="modal-body">
 				<%= form_for :deal, url: "/deals/#{@deal.id}", method: :patch do |f| %>
-					<div class="error-contain">
-					<% unless @deal.errors.count == 0   %>
-				    <div class="error-title">
-				      The form contains <%= pluralize(@deal.errors.count, "error") %>.
-				    </div>
-				    <ul>
-				      <% @deal.errors.full_messages.each do |msg| %>
-				        <li class="error-detail"><%= msg %></li>
-				      <% end %>
-				    </ul>
-				  <% end %>
-					</div>
-
 					<%= f.text_field :name, placeholder: "Company Name", class: "entry-text-field", value: @deal.name %></br>
 					<%= f.text_field :city, placeholder: "Company City", class: "entry-text-field", value: @deal.city  %></br>
 					<%= f.text_field :state, placeholder: "Company State (ex: IN)", class: "entry-text-field", value: @deal.state %></br>
@@ -35,10 +28,13 @@
 					<%= f.text_field :exit_capex, placeholder: "Capex", class: "entry-field", value: @deal.exit_capex %></br>
 					<%= f.text_field :exit_multiple, placeholder: "Exit Multiple", class: "entry-field", value: @deal.exit_multiple %></br>
 					<%= f.text_field :debt_paydown_multiple, placeholder: "Debt Multiple Paid Down", class: "entry-field", value: @deal.debt_paydown_multiple %></br>
+			</div>
 
-				<div class="modal-footer">
-					<%= f.submit "Update Deal", class: "btn btn-primary new-form-btn" %>
-					<%= button_to "Cancel Update", deals_path, method: :get, class: "btn btn-warning new-form-btn" %>
-				</div>
+			<div class="modal-footer">
+					<button class="btn btn-warning" data-dismiss="modal" aria-hidden="true">Cancel Update</button>
+					<%= f.submit "Update Deal", class: "btn btn-primary" %>
 				<% end %>
+			</div>
+		</div>
+	</div>	
 </div>

@@ -1,23 +1,13 @@
-<div class="container new-contain border">
-		  <div class="modal-header">  
-		    <%= button_to "All Deals", "/deals", method: :get, class: "btn btn-primary new-btn" %>
-		    <h3 class="h3-view">New Deal</h3>
+<!-- modal for NEW DEAL in /deals -->
+<div id="newDealModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="newDealModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="newDealModalLabel" class="h3-view">New Deal</h3>
 		  </div>
-
-				<%= form_for(@deal) do |f| %>
-					<div class="error-contain">
-					<% unless @deal.errors.count == 0   %>
-				    <div class="error-title">
-				      The form contains <%= pluralize(@deal.errors.count, "error") %>.
-				    </div>
-				    <ul>
-				      <% @deal.errors.full_messages.each do |msg| %>
-				        <li class="error-detail"><%= msg %></li>
-				      <% end %>
-				    </ul>
-				  <% end %>
-					</div>
-
+		  <div class="modal-body">
+				<%= form_for :deal, url: "/deals" do |f| %>
 					<%= f.text_field :name, placeholder: "Company Name", class: "entry-text-field" %></br>
 					<%= f.text_field :city, placeholder: "Company City", class: "entry-text-field" %></br>
 					<%= f.text_field :state, placeholder: "Company State (ex: IN)", class: "entry-text-field" %></br>
@@ -38,10 +28,13 @@
 					<%= f.text_field :exit_capex, placeholder: "Capex", class: "entry-field" %></br>
 					<%= f.text_field :exit_multiple, placeholder: "Exit Multiple", class: "entry-field" %></br>
 					<%= f.text_field :debt_paydown_multiple, placeholder: "Debt Multiple Paid Down", class: "entry-field" %></br>
-				
-				<div class="modal-footer">
-					<%= f.submit "Save Deal", class: "btn btn-primary new-form-btn" %>
-					<%= button_to "Cancel Entry", deals_path, method: :get, class: "btn btn-warning new-form-btn" %>
-				</div>
+			</div>
+
+			<div class="modal-footer">
+					<button class="btn btn-warning" data-dismiss="modal" aria-hidden="true">Cancel Entry</button>
+					<%= f.submit "Save Deal", class: "btn btn-primary" %>
 				<% end %>
+			</div>
+		</div>
+	</div>	
 </div>

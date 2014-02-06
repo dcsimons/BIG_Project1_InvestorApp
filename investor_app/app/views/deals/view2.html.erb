@@ -16,38 +16,42 @@
 			No deals in book.
 		</p>
 	<% else %>
-		<div class="container view-table narrow">
-			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-				<h3>Company Name</h3>
-			</div>
-			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-				<h3>Location</h3>
-			</div>
-			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 center">
-				<h3>CoC Returns</h3>
-			</div>
-		</div>
+		<table class="table table-striped">
+			<colgroup>
+				<col class="col-md-8"/>
+				<col class="col-md-2"/>
+				<col class="col-md-2"/>
+			</colgroup>
+			<thead class="tablehead">
+				<tr>
+					<td>Company Name</td>
+					<td>Location</td>
+					<td class="center">CoC Returns</td>
+				</tr>
+			</thead>
+		</table>
 			<% @deals.each do |d| %>
 				<div class="panel-group" id="accordion">
   				<div class="panel panel-default">
     				<div class="panel-heading">
       				<h4 class="panel-title">
-        				<a data-toggle="collapse" data-parent="#accordion" href="#<%= d.id %>">
-        					<div class="container view-table narrow">
-										<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-											<h4><%= d.name %></h4>
-										</div>
-										<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-											<h4><%= d.city %>, <%= d.state %></h4>
-										</div>
-										<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 center">
-											<h4><%= d.coc_return.round(1) %>x</h4>
-										</div>
-									</div>
+        				<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+        					<table>
+        						<colgroup>
+        							<col class="col-md-8"/>
+        							<col class="col-md-2"/>
+        							<col class="col-md-2"/>
+        						</colgroup>
+        						<tbody><tr>
+        							<td><%= link_to d.name, "/deals/#{d.id}" %></td>
+        							<td><%= d.city %>, <%= d.state %></td>
+        							<td class="center"><%= d.coc_return.round(1) %>x</td>
+        						</tr></tbody>
+        					</table>
         				</a>
       				</h4>
     				</div>
-    				<div id="<%= d.id %>" class="panel-collapse collapse">
+    				<div id="collapseOne" class="panel-collapse collapse in">
       				<div class="panel-body">
         				<div class="container show-contain border">
 									<div class="modal-header">	

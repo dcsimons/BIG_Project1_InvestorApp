@@ -1,40 +1,171 @@
-<%= button_to "Edit Deal", edit_deal_path(@deal), method: :get, class: "btn btn-primary" %>
-<%= button_to "Kill Deal", "/deals/#{@deal.id}", method: :delete, class: "btn btn-danger", confirm: "Are you sure you want to kill #{@deal.name}?" %>
+	
+<div class="container show-contain border">
+	<div class="modal-header">	
+		<%= button_to "Kill Deal", "/deals/#{@deal.id}", method: :delete, class: "btn btn-danger show-btn", confirm: "Are you sure you want to kill #{@deal.name}?" %>
+		<a href="#editDealModal" role="button" class="btn btn-success show-btn" data-toggle="modal">Edit Deal</a>
+		<%= button_to "All Deals", "/deals", method: :get, class: "btn btn-primary show-btn" %>
 
-<h2><%= @deal.name %></h2>
-<h3><%= @deal.city %>, <%= @deal.state %></h3>
-<p>($ in <%= @deal.round_type %>)</p>
-<br>
-<h4>Cash-on-Cash Returns: <%= @deal.coc_return %>x</h4>
-<br>
-<h4>Entry Metrics</h4>
-<h5>Entry Year: </h5><p><%= @deal.entry_year %></p>
-<h5>Revenue: </h5><p><%= @deal.entry_revenue %></p>
-<h5>Gross Profit: </h5><p><%= @deal.entry_gp %></p>
-<h5>Gross Margin: </h5><p><%= @deal.entry_gm %>%</p>
-<h5>EBITDA: </h5><p><%= @deal.entry_EBITDA %></p>
-<h5>EBITDA Margin: </h5><p><%= @deal.entry_EBITDA_margin %>%</p>
-<h5>Capex: </h5><p><%= @deal.entry_capex %></p>
-<h5>Free Cash Flow: </h5><p><%= @deal.entry_fcf %></p>
-<br>
-<h4>Deal Terms</h4>
-<h5>Leverage: </h5><p><%= @deal.leverage_multiple %>x ($<%= @deal.leverage_amount %>)</p>
-<h5>Equity: </h5><p><%= @deal.equity_multiple %>x ($<%= @deal.equity_amount %>)</p>
-<h5>Purchase Price: </h5><p><%= @deal.purchase_multiple %>x ($<%= @deal.purchase_price %>)</p>
-<br>
-<h4>Exit Assumptions</h4>
-<h5>Exit Year: </h5><p><%= @deal.exit_year %></p>
-<h5>Revenue: </h5><p><%= @deal.exit_revenue %></p>
-<h5>Gross Profit: </h5><p><%= @deal.exit_gp %></p>
-<h5>Gross Margin: </h5><p><%= @deal.exit_gm %>%</p>
-<h5>EBITDA: </h5><p><%= @deal.exit_EBITDA %></p>
-<h5>EBITDA Margin: </h5><p><%= @deal.exit_EBITDA_margin %>%</p>
-<h5>Capex: </h5><p><%= @deal.exit_capex %></p>
-<h5>Free Cash Flow: </h5><p><%= @deal.exit_fcf %></p>
-<h5>Hold Period Debt Paydown: </h5><p><%= @deal.debt_paydown_multiple %>x ($<%= @deal.debt_paydown_amount %>)</p>
-<br>
-<h5>Exit Multiple: </h5><p><%= @deal.exit_multiple %>x</p>
-<h5>Exit Price: </h5><p>$<%= @deal.exit_price %></p>
-<h5>Debt Paydown: </h5><p>$<%= @deal.exit_debt_paydown %></p>
-<h5>Equity Proceeds: </h5><p>$<%= @deal.exit_proceeds %></p>
+		<h2><%= @deal.name %></h2>
+		<h3><%= @deal.city %>, <%= @deal.state %></h3>
+		<p><em>($ in <%= @deal.round_type %>)</em></p>
+	</div>
 
+		<h3>Cash-on-Cash Returns: <%= @deal.coc_return.round(1) %>x</h3>
+		<br>
+		<table class="table table-striped">
+			<colgroup>
+				<col class="col-md-4"/>
+				<col class="col-md-4"/>
+			</colgroup>
+			<thead>
+				<tr>
+					<td><h4>Entry Metrics</h4></td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><h5>Entry Year: </h5></td>
+					<td class="center"><%= @deal.entry_year %></td>
+				</tr>
+				<tr>
+					<td><h5>Revenue: </h5></td>
+					<td class="center">$<%= @deal.entry_revenue %></td>
+				</tr>
+				<tr>
+					<td><h5>Gross Profit: </h5></td>
+					<td class="center">$<%= @deal.entry_gp %></td>
+				</tr>
+				<tr>
+					<td><h5>Gross Margin: </h5></td>
+					<td class="center"><%= @deal.entry_gm.round(1) %>%</td>
+				</tr>
+				<tr>
+					<td><h5>EBITDA: </h5></td>
+					<td class="center">$<%= @deal.entry_EBITDA %></td>
+				</tr>
+				<tr>
+					<td><h5>EBITDA Margin: </h5></td>
+					<td class="center"><%= @deal.entry_EBITDA_margin.round(1) %>%</td>
+				</tr>
+				<tr>
+					<td><h5>Capex: </h5></td>
+					<td class="center">$<%= @deal.entry_capex %></td>
+				</tr>
+				<tr>
+					<td><h5>Free Cash Flow: </h5></td>
+					<td class="center">$<%= @deal.entry_fcf %></td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-striped">
+			<colgroup>
+				<col class="col-md-4"/>
+				<col class="col-md-4"/>
+			</colgroup>
+			<thead>
+				<tr>
+					<td><h4>Deal Terms</h4></td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><h5>Leverage: </h5></td>
+					<td class="center"><%= @deal.leverage_multiple %>x ($<%= @deal.leverage_amount.round(1) %>)</td>
+				</tr>
+				<tr>
+					<td><h5>Equity: </h5></td>
+					<td class="center"><%= @deal.equity_multiple %>x ($<%= @deal.equity_amount.round(1) %>)</td>
+				</tr>
+				<tr>
+					<td><h5>Purchase Price: </h5></td>
+					<td class="center"><%= @deal.purchase_multiple %>x ($<%= @deal.purchase_price.round(1) %>)</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-striped">
+			<colgroup>
+				<col class="col-md-6"/>
+				<col class="col-md-6"/>
+			</colgroup>
+			<thead>
+				<tr>
+					<td><h4>Exit Assumptions</h4></td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><h5>Exit Year: </h5></td>
+					<td class="center"><%= @deal.exit_year %></td>
+				</tr>
+				<tr>
+					<td><h5>Revenue: </h5></td>
+					<td class="center">$<%= @deal.exit_revenue %></td>
+				</tr>
+				<tr>
+					<td>Gross Profit: </h5></td>
+					<td class="center">$<%= @deal.exit_gp %></td>
+				</tr>
+				<tr>
+					<td><h5>Gross Margin: </h5></td>
+					<td class="center"><%= @deal.exit_gm.round(1) %>%</td>
+				</tr>
+				<tr>
+					<td><h5>EBITDA: </h5></td>
+					<td class="center">$<%= @deal.exit_EBITDA %></td>
+				</tr>
+				<tr>
+					<td><h5>EBITDA Margin: </h5></td>
+					<td class="center"><%= @deal.exit_EBITDA_margin.round(1) %>%</td>
+				</tr>
+				<tr>
+					<td><h5>Capex: </h5></td>
+					<td class="center">$<%= @deal.exit_capex %></td>
+				</tr>
+				<tr>
+					<td><h5>Free Cash Flow: </h5></td>
+					<td class="center">$<%= @deal.exit_fcf %></td>
+				</tr>
+				<tr>
+					<td><h5>Hold Period Debt Paydown: </h5></td>
+					<td class="center"><%= @deal.debt_paydown_multiple %>x ($<%= @deal.debt_paydown_amount %>)</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-striped">
+			<colgroup>
+				<col class="col-md-6"/>
+				<col class="col-md-6"/>
+			</colgroup>
+			<thead>
+				<tr>
+					<td><h4>Exit Results</h4></td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><h5>Exit Multiple: </h5></td>
+					<td><%= @deal.exit_multiple %>x</td>
+				</tr>
+				<tr>
+					<td><h5>Exit Price: </h5></td>
+					<td>$<%= @deal.exit_price %></td>
+				</tr>
+				<tr>
+					<td><h5>Debt Paydown: </h5></td>
+					<td>$<%= @deal.exit_debt_paydown %></td>
+				</tr>
+				<tr>
+					<td><h5>Equity Proceeds: </h5></td>
+					<td>$<%= @deal.exit_proceeds %></td>
+				</tr>
+			</tbody>
+		</table>
+
+</div>
+
+<!-- modal for EDIT DEAL -->
+<%= render partial: "deals/editDealModal" %>
