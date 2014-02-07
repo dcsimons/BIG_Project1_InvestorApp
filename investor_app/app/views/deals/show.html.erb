@@ -1,9 +1,10 @@
-	
+<%= render partial: "layouts/navbar" %>
+
 <div class="container show-contain border">
 	<div class="modal-header">	
 		<%= button_to "Kill Deal", "/deals/#{@deal.id}", method: :delete, class: "btn btn-danger show-btn", confirm: "Are you sure you want to kill #{@deal.name}?" %>
 		<a href="#editDealModal" role="button" class="btn btn-success show-btn" data-toggle="modal">Edit Deal</a>
-		<%= button_to "All Deals", "/deals", method: :get, class: "btn btn-primary show-btn" %>
+		<%= button_to "Deal Book", "/deals", method: :get, class: "btn btn-primary show-btn" %>
 
 		<h2><%= @deal.name %></h2>
 		<h3><%= @deal.city %>, <%= @deal.state %></h3>

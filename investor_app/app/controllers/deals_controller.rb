@@ -5,7 +5,11 @@ class DealsController < ApplicationController
 	before_filter :check_deal_owner, only: [:show, :edit, :update, :destroy]
 
 	def index
-		render :index
+		if current_user
+			redirect_to deals_path
+		else
+			render :index
+		end
 	end
 
 	def new

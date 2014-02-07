@@ -1,4 +1,6 @@
-<div class="container new-contain border">
+<%= render partial: "layouts/navbar" %>
+
+<div class="container new-contain">
 				<h3 class="h3-view">Edit Deal: <%= @deal.name %></h3>
 
 				<%= form_for :deal, url: "/deals/#{@deal.id}", method: :patch do |f| %>

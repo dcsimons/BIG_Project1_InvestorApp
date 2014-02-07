@@ -1,16 +1,26 @@
 body {
-	padding-top: 50px;
-	/*background: url(http://ak.picdn.net/shutterstock/videos/2659799/preview/stock-footage-question-mark-looping-background.jpg);
+	padding-top: 80px;
+	/*background: url(http://hopeforallmin.files.wordpress.com/2011/09/compass-antique-map.jpg);*/
+	background: url(http://ieeet.com/wp-content/uploads/2013/06/3d-hd-wallpaper-chess-board-picture.jpg) no-repeat center center fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: black;*/
+  background-color: black;
 }
 
-/* ----- modified Bootstrap CSS ------- */
+/* ----- modified Bootstrap CSS ------------------------------------- */
+
+.navbar-default .navbar-nav>li>a {
+color: #ffffff;
+font-weight: normal;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+color: #1C74FF;
+}
 
 .table-striped>tbody>tr:nth-child(odd)>td {
 	background-color: rgba(122,166,217, 0.5)
@@ -30,12 +40,25 @@ border-radius: 4px;
 }
 
 .panel-default>.panel-heading {
-color: #333;
-background-color: #bc7d43;
+color: #ddd;
+background-color: rgba(3,127,13,0.5);
 border-color: #ddd;
 }
 
-/*----- end Bootstrap CSS ------------ */
+.panel-default {
+	background-color: rgba(0,0,0,0);
+}
+
+.panel-body {
+	background-color: rgba(255,255,255,1);
+}
+
+/*----- end Bootstrap CSS --------------------------------------------- */
+
+.navbar-style {
+	background-color: rgba(0,0,0,0);
+	border: none;
+}
 
 .border {
 	border: 2px solid gray;
@@ -50,7 +73,27 @@ border-color: #ddd;
 	width: auto;
 }
 
+.notice {
+	max-width: 300px;
+	margin: 0 auto;
+	text-align: center;
+	border: 2px solid #468d32;
+	border-radius: 3px;
+	background-color: #96dda2;
+	color: #468d32;
+	font-weight: normal;
+}
 
+.alert {
+	max-width: 300px;
+	margin: 0 auto;
+	text-align: center;
+	border: 2px solid #468d32;
+	border-radius: 3px;
+	background-color: #96dda2;
+	color: #468d32;
+	font-weight: normal;
+}
 
 .error-contain {
 	border: 2px solid maroon;
@@ -70,6 +113,9 @@ border-color: #ddd;
 
 .site-contain {
 	width: 900px;
+	border: 2px solid gray;
+	border-radius: 5px;
+	background-color: rgba(255,255,255,0.75);
 }
 
 .home-contain {
@@ -83,10 +129,15 @@ border-color: #ddd;
 
 .new-contain {
 	width: 500px;
+	border: 2px solid gray;
+	border-radius: 5px;
+	background-color: rgba(255,255,255,0.75);
 }
 
 .show-contain {
 	width: 700px;
+	border-radius: 5px;
+	background-color: rgba(255,255,255,0.9);
 }
 
 .title-contain {
@@ -99,9 +150,36 @@ border-color: #ddd;
 	width: 425px;
 }
 
+.signin-contain {
+	margin: 0 auto;
+	max-width: 425px;
+}
+
+.signup-contain {
+	margin: 0 auto;
+	max-width: 425px;
+}
+
 .edit-profile-contain {
 	width: 425px;
 	margin: 0 auto;
+	border: 2px solid gray;
+	border-radius: 2px;
+	background-color: rgba(255,255,255,0.75);
+}
+
+.title-font {
+	font-family: 'Diplomata SC', cursive;
+	font-size: 100px;
+	color: rgba(255,255,255,1);
+	text-shadow:2px 2px 8px #000000;
+}
+
+.subtitle-font {
+	font-family: 'Rock Salt', cursive;
+	font-size: 50px;
+	color: rgba(255,255,255,1);
+	text-shadow:2px 2px 8px #000000;
 }
 
 .home-signin {
@@ -111,6 +189,7 @@ border-color: #ddd;
 	border: 2px solid gray;
 	border-radius: 5px;
 	margin: 10px;
+	background-color: rgba(255,255,255,0.75);
 }
 
 .home-signup {
@@ -120,6 +199,7 @@ border-color: #ddd;
 	border: 2px solid gray;
 	border-radius: 5px;
 	margin: 10px;
+	background-color: rgba(255,255,255,0.75);
 }
 
 .input-field {
@@ -155,40 +235,14 @@ border-color: #ddd;
 	font-size: 18px;
 }
 
-.remember {
-	margin-left: 5px;
+.pw-btn {
+	margin: 5px;
 }
 
-.view-table {
-	color: black;
-	/*border: 2px solid black;
-	border-radius: 3px;
-	background-color: rgba(0,255,0,0.75);
-	padding: 2px;*/
-	margin: 10px 0 10px 0;
-}
-
-.narrow {
-	margin: 0 auto;
-	max-width: 850px;
-}
-
-.h1-view {
-	text-align: center;
-	font-weight: bold;
-	font-size: 100px;
-}
-
-.h2-view {
-	float: left;
+.pw-signupin {
 	display: inline-block;
-	font-weight: bold;
-	font-size: 40px;
-}
-
-.h3-view {
-	font-weight: bold;
-	font-size: 30px;
+	margin: 5px;
+	float: right;
 }
 
 .new-btn {
@@ -208,6 +262,44 @@ border-color: #ddd;
 	float: right;
 	margin: 5px;
 	font-size: 15px;
+}
+
+.remember {
+	margin-left: 5px;
+}
+
+.view-table {
+	color: black;
+	margin: 10px 0 10px 0;
+}
+
+.narrow {
+	margin: 0 auto;
+	max-width: 850px;
+}
+
+.h1-view {
+	text-align: center;
+	font-weight: bold;
+	font-size: 100px;
+	font-family: 'Diplomata SC', cursive;
+}
+
+.h2-view {
+	float: left;
+	display: inline-block;
+	font-weight: bold;
+	font-size: 60px;
+}
+
+.h3-view {
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.h4-view {
+	font-weight: bold;
+	font-size: 25px;
 }
 
 .entry-field {

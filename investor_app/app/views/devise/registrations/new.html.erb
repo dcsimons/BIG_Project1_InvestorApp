@@ -1,18 +1,17 @@
-<h2>Sign Up</h2>
+<div class="signup-contain">
+	<div class="home-signup">
+					<h3>Sign Up</h3>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+					<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+					  <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+						  	<%= f.email_field :email, placeholder: "Email", class: "input-field" %>
+						  	<%= f.password_field :password, placeholder: "Password", class: "input-field" %>
+						  	<%= f.password_field :password_confirmation, placeholder: "Re-type Password", class: "input-field" %>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign Up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+					  <div class="modal-footer">
+					  	<%= f.submit "Sign up for LBO: The App", class: "btn btn-success signup-btn" %>
+					  </div>
+					<% end %>
+	</div>
+</div>
